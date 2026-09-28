@@ -4,6 +4,7 @@ import android.accessibilityservice.AccessibilityServiceInfo;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.PendingIntent;
+import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -19,6 +20,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.net.Uri;
 import android.provider.Settings;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -528,6 +530,21 @@ public class MainActivity extends Activity {
         addSection(page, "生效条件",
                 "LSPosed 中启用本模块，作用域勾选「系统框架」，然后重启手机。"
                         + "配置保存在 /data/system/a11ykeeper_pinned.txt。");
+
+        addSection(page, "关于", "项目源码、版本说明与问题反馈：");
+        TextView projectLink = text("GitHub · A11yKeeper ↗", 15);
+        projectLink.setTextColor(ACCENT);
+        projectLink.setPadding(0, dp(8), 0, dp(8));
+        projectLink.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("https://github.com/jiemo9527/A11yKeeper"));
+            try {
+                startActivity(intent);
+            } catch (ActivityNotFoundException e) {
+                toast("没有可打开网页的应用");
+            }
+        });
+        page.addView(projectLink);
 
         String version = "";
         try {
