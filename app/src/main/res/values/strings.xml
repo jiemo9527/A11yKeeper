@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">无障碍保持</string>
+    <string name="xposed_desc">读取无障碍服务列表，勾选后固定常开；检测到“已开启但故障”的假死服务时先关闭再重新打开修复。作用域仅系统框架(System Framework)。</string>
+</resources>
