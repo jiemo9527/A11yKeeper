@@ -31,7 +31,7 @@
 
         <!-- 主界面：不带 LAUNCHER，由 LSPosed 管理器通过 MODULE_SETTINGS 打开 -->
         <activity
-            android:name=".MainActivity"
+            android:name="io.github.jiemo9527.a11ykeeper.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,10 +41,10 @@
 
         <!-- 桌面图标：禁用此 alias 即隐藏图标 -->
         <activity-alias
-            android:name=".Launcher"
+            android:name="io.github.jiemo9527.a11ykeeper.Launcher"
             android:enabled="true"
             android:exported="true"
-            android:targetActivity=".MainActivity">
+            android:targetActivity="io.github.jiemo9527.a11ykeeper.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -1,4 +1,4 @@
-package com.jiemo.a11ykeeper;
+package io.github.jiemo9527.a11ykeeper;
 
 import de.robv.android.xposed.IXposedHookLoadPackage;
 import de.robv.android.xposed.XC_MethodHook;
