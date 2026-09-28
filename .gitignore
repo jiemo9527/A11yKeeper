@@ -10,3 +10,5 @@ local.properties
 *.jks
 *.apk
 *.aab
+__pycache__/
+*.pyc
